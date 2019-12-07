@@ -12,11 +12,50 @@
           #a1 {
              color:blue;
           }
+          /*选择器组，给一组选择器选中的所有元素统一设置样式*/
+          .importent,#a1 {
+             background-color:#ccc;
+          }
+          /*派生选择器:后代、子元素*/
+          /*后代选择器*/
+          /*在p1下选择所有的b元素*/
+          #p1 b{
+             color:red;
+          } 
+          /*子元素选择器*/
+          /*>表示只找儿子，不找孙子*/
+          #p1>b {
+             font-size:50px;
+          }
+          /*伪类选择器*/
+          /*选择从来没点击过的超链接*/
+          a:link {
+              color:blue;
+          }
+          /*选择已经访问过的超链接*/
+          a:visited {
+              color:red;
+          }
+          /*选择激活(正被点中)的元素*/
+          #btn:active {
+              background-color:blue;
+          }
+          /*选择鼠标悬停的目标*/
+          img:hover {
+             width:450px;
+             height:350px;
+          }
      </style>
   </head>
   <body>
       <h1 id="a1">Hello.</h1>
       <h2 class="importent">How are you?</h2>
       <h3 class="importent">I'm fine,thank you.</h3>
+      <p id="p1">
+                           北京市<u>海淀区<b>北三环</b>西路</u>甲18号<b>中鼎</b>大夏B7
+      </p>
+      <p><a href="http://www.baidu.com">百度</a></p>
+      <p><input type="button" value="点我" id="btn"/></p>
+      <p><img src="../images/pig.png"/></p>
   </body>
 </html>
