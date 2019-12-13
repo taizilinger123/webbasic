@@ -128,6 +128,38 @@
            border: 0;
            margin: 0 5px;
         }
+        /*操作区按钮*/
+        #operate {
+           text-align: right; /*居右显示*/
+           line-height:40px;  /*设置跟父元素operate一样的高度就居中了*/
+        }
+        .add {
+           background-image: url("../img/btn_bg.png");
+           width:71px;
+           height:26px;
+           border:0;
+           color:#fff;
+        }
+        /*分页*/
+        #page {
+           text-align: center;
+        }
+        #page a {
+           text-decoration: none;
+           color:#000;
+           border:1px solid #e8f3f8;
+           margin:0;
+           padding:5px 10px;
+        }
+        #page .current_page {
+           border:1px solid #97B9C9;
+           background-color:#fff;
+        }
+        #page a:hover {
+           border:1px solid #97B9C9;
+           background-color:#CDDDE4;
+           color:#067DB5;
+        }
      </style>
   </head>
   <body>
@@ -143,7 +175,9 @@
       <!--内容区-->
       <div id="content">
          <!--操作区-->
-         <div id="operate"></div>
+         <div id="operate">
+           <input type="button" value="增加" class="add"/>
+         </div>
          <!--数据区-->
          <div id="data">
            <table>
@@ -189,7 +223,15 @@
            </table>
          </div>
          <!--分页区-->
-         <div id="page"></div>
+         <div id="page">
+            <a href="#">上一页</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#" class="current_page">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">下一页</a>
+         </div>
       </div>
     </div>
     <!-- 版权区 -->
