@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+     <title>照片墙</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+        body {
+           background-color:#300;
+        }
+        ul {
+           width:780px;
+           margin:10px auto;
+           /*border:1px solid #fff;*/
+           /*去掉li前的符号*/
+           list-style-type:none;
+        }
+        li {
+           background-color:#fff;
+           border:1px solid #ddd;
+           width:218px;
+           padding:10px;
+           margin:10px;
+           float:left;
+        }
+        li p {
+           text-align:center;
+        }
+        li:hover {
+           /*相对定位*/
+           position:relative;
+           /*设置偏移量*/
+           left:-2px;
+           top:-2px;
+        }
+     </style>
+  </head>
+  <body>
+     <!--照片墙上的照片列表-->
+     <ul>
+        <li>
+          <img src="../images/01.jpg"/>
+          <p>啊，亲爱的苍!</p>
+        </li>
+        <li>
+          <img src="../images/02.jpg"/>
+          <p>此时，你身在何方？</p>
+        </li>
+        <li>
+          <img src="../images/03.jpg"/>
+          <p>难道真的漂过了洋？</p>
+        </li>
+        <li>
+          <img src="../images/04.jpg"/>
+          <p>Japan的痴汉有很多很多，</p>
+        </li>
+        <li>
+          <img src="../images/05.jpg"/>
+          <p>你千万要穿好衣裳!</p>
+        </li>
+        <li>
+          <img src="../images/06.jpg"/>
+          <p>别走了光!</p>
+        </li>
+     </ul>
+  </body>
+</html>
