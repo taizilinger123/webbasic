@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+     <title>左浮动</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+        div {
+           border:1px solid #000;
+           margin:3px;
+        }
+        #outter {
+           width:400px;
+        }
+        #d1 {
+           width:100px;
+           height:100px;
+           background-color:red;
+        }
+        #d2 {
+           width:150px;
+           height:150px;
+           background-color:blue;
+        }
+        #d3 {
+           width:200px;
+           height:200px;
+           background-color:green;
+        }
+        p {
+           border:1px solid #000;
+        }
+        /*左浮动*/
+        #d1, #d2, #d3 {
+           float: left;
+        }
+     </style>
+  </head>
+  <body>
+     <div id="outter">
+        <div id="d1">d1</div>
+        <div id="d2">d2</div>
+        <div id="d3">d3</div>
+        <div style="border:0;clear:left;"></div>
+     </div>
+     <p>苍苍、奇奇、晶晶</p>
+  </body>
+</html>
