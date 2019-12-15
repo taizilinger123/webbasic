@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+     <title>照片堆</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+         div {
+            width:20px;
+            height:20px;
+            border:3px solid red;
+            margin:200px auto;
+            position:relative;
+         }
+         #img1 {
+            position:absolute;
+         }
+         #img2 {
+            position:absolute;
+            left:50px;
+            top:-150px;
+         }
+         #img3 {
+            position:absolute;
+            left:-250px;
+            top:-50px;
+         }
+         img:hover {
+            /*让悬停的图片处于最顶层*/
+            z-index: 999;
+         }
+     </style>
+  </head>
+  <body>
+     <div>
+        <img src="../images/1.jpg" id="img1"/>
+        <img src="../images/2.jpg" id="img2"/>
+        <img src="../images/3.jpg" id="img3"/>
+     </div>
+  </body>
+</html>

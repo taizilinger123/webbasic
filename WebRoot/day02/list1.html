@@ -164,6 +164,34 @@
         #logo img {
            float:left;
         }
+        /*将父元素设置为相对定位，以便于参照它进行绝对定位*/
+        #content {
+           position: relative;
+        }
+        /*将消息框绝对定位在content中心位置*/
+        #msg {
+           position:absolute;
+           left:250px;
+           top:100px;
+           width:400px;
+           height:50px;
+           border: 1px solid #F68A8A;          
+           padding:10px 10px 10px 40px;
+           background:url("../img/ok.png") 10px 30px no-repeat;
+           background-color: #FDECEC;
+        }
+        #msg input {
+           float:right;
+           border:0;
+           width:22px;
+           height:22px;
+           background-image:url("../img/close.png");
+           /*将鼠标变成手型*/
+           cursor:pointer;
+        }
+        #msg p {
+           /*border:1px solid blue;*/
+        }
      </style>
   </head>
   <body>
@@ -236,6 +264,11 @@
             <a href="#">4</a>
             <a href="#">5</a>
             <a href="#">下一页</a>
+         </div>
+         <!-- 消息提示框 -->
+         <div id="msg">
+            <input type="button" value="x"/>
+            <p>操作成功!</p>
          </div>
       </div>
     </div>
