@@ -192,6 +192,117 @@
         #msg p {
            /*border:1px solid blue;*/
         }
+        /*设置导航栏中的功能列表*/
+        ul, li {
+           /*border:1px solid blue;*/
+        }
+        ul {
+           width:960px;
+           margin: 0 auto;
+           list-style-type: none;
+        }
+        li {
+           width:68px;
+           height:77px;
+           margin:7px 14px;
+           float:left;
+        }
+        /*将超链接改为块，并设置宽高等于li的宽高，这样鼠标点击li就是点击超链接了*/
+        li a {
+           display: block;
+           width:68px;
+           height:77px;
+        }
+        .index_on {
+           background-image:url("../img/index_on.png");
+        }
+        .index_off {
+           background-image:url("../img/index_out.png");
+        }
+        .role_on {
+           background-image:url("../img/role_on.png");
+        }
+        .role_off {
+           background-image:url("../img/role_out.png");
+        }
+        .role_off:hover {
+           background-image:url("../img/role_on.png");
+        }
+        .admin_on {
+           background-image:url("../img/admin_on.png");
+        }
+        .admin_off {
+           background-image:url("../img/admin_out.png");
+        }
+        .admin_off:hover {
+           background-image:url("../img/admin_on.png");
+        }
+        .fee_on {
+           background-image:url("../img/fee_on.png");
+        }
+        .fee_off {
+           background-image:url("../img/fee_out.png");
+        }
+        .fee_off:hover {
+           background-image:url("../img/fee_on.png");
+        }
+        .account_on {
+           background-image:url("../img/account_on.png");
+        }
+        .account_off {
+           background-image:url("../img/account_out.png");
+        }
+        .account_off:hover {
+           background-image:url("../img/account_on.png");
+        }
+        .service_on {
+           background-image:url("../img/service_on.png");
+        }
+        .service_off {
+           background-image:url("../img/service_out.png");
+        }
+        .service_off:hover {
+           background-image:url("../img/service_on.png");
+        }
+        .bill_on {
+           background-image:url("../img/bill_on.png");
+        }
+        .bill_off {
+           background-image:url("../img/bill_out.png");
+        }
+        .bill_off:hover {
+           background-image:url("../img/bill_on.png");
+        }
+        .report_on {
+           background-image:url("../img/report_on.png");
+        }
+        .report_off {
+           background-image:url("../img/report_out.png");
+        }
+        .report_off:hover {
+           background-image:url("../img/report_on.png");
+        }
+        .info_on {
+           background-image:url("../img/info_on.png");
+        }
+        .info_off {
+           background-image:url("../img/info_out.png");
+        }
+        .info_off:hover {
+           background-image:url("../img/info_on.png");
+        }
+        .pwd_on {
+           background-image:url("../img/pwd_on.png");
+        }
+        .pwd_off {
+           background-image:url("../img/pwd_out.png");
+        }
+        .pwd_off:hover {
+           background-image:url("../img/pwd_on.png");
+        }
+        div {
+           border:0;
+        }
      </style>
   </head>
   <body>
@@ -201,7 +312,21 @@
       <a href="#">[退出]</a>
     </div>
     <!-- 导航区 -->
-    <div id="nav"></div>
+    <div id="nav">
+       <!--每一个功能有2个图标，以主页为例。其中index_on是带有边框的图标，index_off是不带边框的图标，使用类选择器是为了便于切换图标-->
+       <ul>
+         <li><a href="#" class="index_on"></a></li>
+         <li><a href="#" class="role_off"></a></li>
+         <li><a href="#" class="admin_off"></a></li>
+         <li><a href="#" class="fee_off"></a></li>
+         <li><a href="#" class="account_off"></a></li>
+         <li><a href="#" class="service_off"></a></li>
+         <li><a href="#" class="bill_off"></a></li>
+         <li><a href="#" class="report_off"></a></li>
+         <li><a href="#" class="info_off"></a></li>
+         <li><a href="#" class="pwd_off"></a></li>
+       </ul>
+    </div>
     <!-- 核心区 -->
     <div id="main">
       <!--核心区除了内容之外，还有背景图片 -->
