@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+     <title>如何使用JS</title>
+     <meta charset="utf-8"/>
+     <!--嵌入式js需要写在<script>里-->
+     <script type="text/javascript">
+        //要调用的JS需要定义在函数中；
+        //function 函数名(参数) {函数体}
+        function f2() {
+            alert("你好，传奇哥！");
+            console.log("调试");
+        }
+     </script>
+     <!-- 引用JS,<script>必须写成双标记。另外这个标签内部就不要再写任何内容了。 -->
+     <script type="text/javascript" src="../js/d1.js"></script>
+  </head>
+  <body>
+     <!-- 事件定义式 -->
+     <input type="button" value="按钮1" onclick="alert('你好，苍老师！');"/>
+     <!-- 嵌入式 -->
+     <input type="button" value="按钮2" onclick="f2();"/>
+     <!-- 文件调用式 -->
+     <input type="button" value="按钮3" onclick="f3();"/>
+  </body>
+</html>
