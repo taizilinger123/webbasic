@@ -77,3 +77,15 @@ true
 isNaN(123);
 false
 ##################
+var a = "123";
+undefined
+var b = 123;
+undefined
+var c = 123;
+undefined
+a==b
+true
+a===b
+false
+b===c
+true
