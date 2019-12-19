@@ -82,6 +82,7 @@ typeof(123);
 typeof(true);
 "boolean"
 ######################
+isNaN(is not a number)难道这不是数字吗？
 isNaN("abc");
 true
 isNaN(123);
