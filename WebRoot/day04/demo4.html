@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+     <title>计算阶乘</title>
+     <meta charset="utf-8"/>
+     <script type="text/javascript">
+       function cal(){
+         //获取文本框
+         var input = document.getElementById("num");
+         //获取span
+         var span = document.getElementById("result");
+         //获取文本框的值
+         var n = input.value;
+         if(n=="" || isNaN(n) ||n<1 ||n>100){
+             //输入的不能为空、非数字、小于1、大于100
+             span.innerHTML = "请输入1-100之间的整数!";
+         }else{
+             //计算阶乘：从1连续乘到n;
+             //条件表达式直接写成i,直到i=0时停止;
+             var sum = 1;
+             for(var i=n; i; i--){
+                 sum *= i;//sum = sum*i;
+             }
+             span.innerHTML = sum;
+         }
+       }
+     </script>
+  </head>
+  <body>
+     <input type="text" id="num"/>
+     <!--HTML5规范下，按钮可以写成<button>-->
+     <button onclick="cal();">阶乘</button>
+     = 
+     <span id="result"></span>
+  </body>
+</html>

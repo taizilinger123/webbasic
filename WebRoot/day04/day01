@@ -13,6 +13,16 @@
           JS中有不严格的封装，对象中封装的属性和方法是可以任意访问、修改的。
       --多态
           JS中的所有对象都是Object,即他们的根原型是Object。但是JS不像Java的多态那样严谨,JS中的对象可以赋值给任意类型的其他对象。
+2.JS中的条件表达式
+  1)布尔值
+            和Java的规则一样;
+  2)其他值
+    JS中可以以任何数据作为表达式
+    A.如果是非空的数据，则代表true
+    B.如果是空的数据，则代表false
+      0/null/""/undefined/NaN
+                   一切表示空的数字都是false
+#############################
 F12->console
 var a;
 undefined
@@ -89,3 +99,55 @@ a===b
 false
 b===c
 true
+#######################
+排错：排除+二分法(把函数里代码全部注释看会不会报错，然后代码打开二分法排除,F12浏览器console看有没有报错)
+#######################
+1==1?1:2
+1
+1==2?1:2
+2
+"A"?1:2;
+1
+0?1:2;
+2
+null?1:2;
+2
+###########################
+var s1 = "abc";
+undefined
+var s2 = new String("def");
+undefined
+s1.length;
+3
+s2.length;
+3
+"abc".toUpperCase();
+"ABC"
+"abc".toLowerCase();
+"abc"
+"JavaScript".charAt(3);
+"a"
+"JavaScript".charCodeAt(3);
+97
+"其实JavaScript和Java挺像".indexOf("Java")
+2
+"其实JavaScript和Java挺像".lastIndexOf("Java")
+13
+"abcdefg".substring(3,6);
+"def"
+"abcdefg".substring(3);
+"defg"
+"JavaScript像Java,但不是Java.".replace("Java","苍老师");
+"苍老师Script像Java,但不是Java."
+"周一,周二,周三,周四,周五".split(",");
+(5) ["周一", "周二", "周三", "周四", "周五"]
+3.1415926.toFixed(2);
+"3.14"
+3.1415926.toFixed(4);
+"3.1416"
+3.1.toFixed(2);
+"3.10"
+var i = 3.1;
+undefined
+i.toFixed(2);
+"3.10"
