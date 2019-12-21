@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+  <head>
+     <title>登录</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+        form {
+           width:500px;
+           margin:150px auto;
+           border:1px solid #ccc;
+        }
+        form h1 {
+           text-align: center;
+           margin: 0;
+           padding: 5px;
+           border:1px solid #ccc;
+        }
+        form p {
+           margin: 0;
+           padding: 20px;
+           border: 1px solid #ccc;
+        }
+        form div {
+           text-align: center;
+           margin: 0;
+           padding: 10px;
+           border: 1px solid #ccc;
+        }
+        .error_msg {
+           border: 1px solid red;
+           color: red;
+        }
+     </style>
+     <script type="text/javascript">
+          //校验用户名
+          function check_name() {
+             //获取账号文本框
+             var input = document.getElementById("name");
+             //获取账号提示的span
+             var span = document.getElementById("name_msg");
+             //获取文本框的值
+             var name = input.value;
+             //console.log(name);
+             var reg = /^\w{3,20}$/;
+             if(!reg.test(name)){
+                 //如果不匹配，增加错误样式
+                 //className属性等价于元素的class
+                 span.className = "error_msg";
+                 return false;
+             }else{
+                 //如果匹配，移除错误样式
+                 span.className = "";
+                 return true;
+             }
+          }
+          //校验密码
+          function check_pwd(){
+             //获取密码框
+             var input = document.getElementById("pwd");
+             //获取span
+             var span = document.getElementById("pwd_msg");
+             
+             //获取密码
+             var pwd = input.value;
+             var reg = /^\w{6,20}$/;
+             if(!reg.test(pwd)){
+                //不匹配，设置错误样式
+                span.className = "error_msg";  
+                return false;  
+             }else{
+                //匹配，移除错误样式
+                span.className = "";
+                return true;
+             }
+          }
+     </script>
+  </head>
+  <body>
+     <!-- 表单用于输入登录信息，提交给服务器 -->
+     <!-- onsubmit是表单提交事件，在点击提交按钮时触发。触发时先调用onsubmit内方法，若该方法返回true则会提交表单，返回false则不提交。
+                即，此处声明的方法可以起到拦截提交的作用。-->
+     <form action="http://www.baidu.com" onsubmit="return (check_name()+check_pwd())==2;">
+         <h1>登录</h1>
+         <p>
+                                  账号: 
+           <input type="text" id="name" onblur="check_name();"/>
+           <span id="name_msg">3-20位字母、数字、下划线</span>
+         </p>
+         <p>
+                                 密码: 
+           <input type="password" id="pwd" onblur="check_pwd();"/>
+           <span id="pwd_msg">6-20位字母、数字、下划线</span>
+         </p>
+         <div>
+            <input type="submit" value="登录"/>
+         </div>
+     </form>
+  </body>
+</html>

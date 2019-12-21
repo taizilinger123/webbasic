@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+     <title>简单计算器</title>
+     <meta charset="utf-8"/>
+     <script type="text/javascript">
+        function cal(){
+            //获取文本框和span
+            var input = document.getElementById("exp");
+            var span = document.getElementById("result");
+            
+            //获取文本框中的字符串
+            var exp = input.value;
+            //将此字符串当做一个表达式来执行
+            try{
+               var r = eval("("+exp+")");
+               span.innerHTML = r;
+            }catch(e){
+               //如果执行时发生异常，则给予提示
+               span.innerHTML = "输入有误.";
+            }
+        }
+     </script>
+  </head>
+  <body>
+     <input type="text" id="exp"/>
+     <button onclick="cal();">=</button>
+     <span id="result"></span>
+  </body>
+</html>

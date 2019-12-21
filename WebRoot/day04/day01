@@ -152,3 +152,107 @@ var i = 3.1;
 undefined
 i.toFixed(2);
 "3.10"
+###################################
+var a = new Array();
+undefined
+a.length
+0
+a[0]=1
+1
+a.length
+1
+a.push(2)
+2
+a.length
+2
+var b = [1,2,3];
+undefined
+b.length
+3
+var c = [[1,2],[3,4],[5,6]];
+undefined
+c.length
+3
+var a = [8,3,9,5,2];
+undefined
+a.reverse()
+(5) [2, 5, 9, 3, 8]
+a.sort()
+(5) [2, 3, 5, 8, 9]
+var a = [8,5,9,6,2,40];
+undefined
+a.sort();
+(6) [2, 40, 5, 6, 8, 9]
+function compare(j,i){return i-j}
+undefined
+a.sort();
+(6) [2, 40, 5, 6, 8, 9]
+a.sort(compare);
+(6) [40, 9, 8, 6, 5, 2]
+function compare(j,i){return j-i}
+undefined
+a.sort(compare);
+(6) [2, 5, 6, 8, 9, 40]
+1.数组的排序sort()
+  1)排序有2个要素
+    A.排序规则
+    B.比较方法
+  2)排序规则
+    sort方法的排序规则是预置的，且永远不能改变，它永远按照由小到大的顺序来排序。
+            即当2个数比较结果是负数时，将2个数换位。
+  3)比较方法
+    --js预置了比较方法，默认返回2个数j,i相减的值;
+    --排序规则就是基于这个返回值做出的排序;
+    --该比较方法是可以置换的，修改返回值则会对排序规则产生影响。
+##################################################
+Math.abs(-3)
+3
+Math.round(3.14)
+3
+Math.round(3.5)
+4
+var a = new Date();
+undefined
+a
+Sat Dec 21 2019 19:56:29 GMT+0800 (中国标准时间)
+var b = new Date("2015-01-01 01:01:01");
+undefined
+b
+Thu Jan 01 2015 01:01:01 GMT+0800 (中国标准时间)
+a.getTime()
+1576929389413
+a.getDate()
+21
+a.getDay()
+6
+a.getFullYear()
+2019
+a.toLocaleDateString()
+"2019/12/21"
+a.toLocaleTimeString()
+"下午7:56:29"
+###########################################
+var a = /\d{3}/;
+undefined
+a.exec("abc123def")
+["123", index: 3, input: "abc123def", groups: undefined]0: "123"groups: undefinedindex: 3input: "abc123def"length: 1__proto__: Array(0)
+var b = /^\d{3,6}$/;
+undefined
+b.test("abc123def");
+false
+b.test("12");
+false
+b.test("1234");
+true
+var s = "其实JavaScript很像Java的";
+undefined
+var n = /Java/g;
+undefined
+s.match(n)
+(2) ["Java", "Java"]
+s.search(n)
+2
+var s = "其实JavaScript很像Java的";
+undefined
+s.replace(n, "KKK")
+"其实KKKScript很像KKK的"

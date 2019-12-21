@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+     <title>模拟方法的重载</title>
+     <meta charset="utf-8"/>
+     <script type="text/javascript">
+     //求和，计算出传入的所有的数据的和
+     function sum() {
+         var sum = 0;
+         for(var i=0;i<arguments.length;i++){
+             sum += arguments[i];
+         }
+         return sum;
+     }
+     </script>
+  </head>
+  <body>
+     <!-- 点击此button时计算出1-3的和 -->
+     <button onclick="alert(sum(1,2,3));">1-3的和</button>
+     <!-- 点击此button时计算出1-6的和 -->
+     <button onclick="alert(sum(1,2,3,4,5,6));">1-6的和</button>
+  </body>
+</html>

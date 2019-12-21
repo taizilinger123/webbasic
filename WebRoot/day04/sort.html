@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+     <title>排序</title>
+     <meta charset="utf-8"/>
+     <script type="text/javascript">
+        //排序
+        function sort(){
+           var ary = [8,5,9,6,2,40];
+           for(var i=0;i<ary.length;i++){
+             for(var j=i;j<ary.length;j++){
+                //var r = ary[j] - ary[i];
+                //调用比较方法，比较2个数
+                var r = compare(ary[j], ary[i]);
+                //如果比较结果是负数，则颠倒顺序，
+                //目的是为了让小的数在前大的数在后。
+                if(r<0){
+                   var temp = ary[i];
+                   ary[i] = ary[j];
+                   ary[j] = temp;
+                } 
+             }
+           }
+           alert(ary);
+        }
+        //比较规则
+        function compare(j, i){
+           return parseFloat(i)-parseFloat(j);
+        }
+     </script>
+  </head>
+  <body>
+      <input type="button" value="排序" onclick="sort();"/>
+  </body>
+</html>
