@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+     <title>图片变大</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+       .big {
+          width:500px;
+          height:400px;
+       }
+     </style>
+     <script type="text/javascript">
+       function big(){
+          var img = document.getElementById("pig");
+          //修改图片的class属性,使其变大
+          img.className = "big";
+          //2s之后再重置图片的class,使其变回原始大小
+          setTimeout(function(){
+              img.className = "";
+          }, 2000);
+       }
+     </script>
+  </head>
+  <body>
+    <img src="../images/pig.png" id="pig" onclick="big();">
+  </body>
+</html>

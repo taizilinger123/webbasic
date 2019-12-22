@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+     <title>动态提示信息</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+        .hide {
+            display: none;
+        }
+        .show {
+            display: block;
+        }
+     </style>
+     <script type="text/javascript">
+          function del(){
+             //假设已经删除成功了，给予动态提示
+             //1.先将提示信息显示出来
+             var p = document.getElementById("msg");
+             p.className = "show";
+             //2.然后过2s再隐藏掉
+             var id = setTimeout(function(){
+                p.className = "hide";
+                clearTimeout(id);
+             }, 2000);
+          }
+     </script>
+  </head>
+  <body>
+      <p>
+         <button onclick="del();">删除</button>
+      </p>
+      <p id="msg" class="hide">操作成功!</p>
+  </body>
+</html>

@@ -3,3 +3,90 @@ var a = [6,3,8,5,2];
 undefined
 a.sort(function(a,b){return b-a});
 (5) [8, 6, 5, 3, 2]
+########################
+alert(1);
+undefined
+var r = confirm("你确认要拉黑苍老师吗？");
+undefined
+r 
+true
+var a = setInterval(function(){alert(Math.random());}, 1000);
+clearInterval(a);//停止周期性定时器
+##############################
+screen.width
+1366
+screen.height
+768
+screen.availWidth
+1366
+screen.availHeight
+728
+############################
+history.back()
+undefined
+history.forward()
+undefined
+history.go(1)
+undefined
+history.go(-1)
+undefined
+history.go(2)
+undefined
+############################
+location.href = "http://www.baidu.com"
+location.reload();
+#############################
+navigator.userAgent
+"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+###############################
+var t = document.getElementById("t1");
+undefined
+t.nodeName
+"TABLE"
+t.nodeType
+1
+t.innerText
+"中文名	英雄联盟	发行商	腾讯游戏
+其他名称	撸啊撸、lol	发行日期	2011年9月22日
+游戏类型	策略、角色扮演、竞技、团队合作	玩家人数	多人
+游戏平台	PC	游戏画面	3D"
+t.innerHTML
+"
+            <tbody><tr>
+              <td>中文名</td>
+              <td>英雄联盟</td>
+              <td>发行商</td>
+              <td><b>腾讯</b>游戏</td>
+            </tr>
+            <tr>
+              <td>其他名称</td>
+              <td>撸啊撸、lol</td>
+              <td>发行日期</td>
+              <td>2011年9月22日</td>
+            </tr>
+            <tr>
+              <td>游戏类型</td>
+              <td>策略、角色扮演、竞技、团队合作</td>
+              <td>玩家人数</td>
+              <td>多人</td>
+            </tr>
+            <tr>
+              <td>游戏平台</td>
+              <td>PC</td>
+              <td>游戏画面</td>
+              <td>3D</td>
+            </tr>
+         </tbody>"
+var t = document.getElementById("t1");
+undefined
+t.getAttribute("width")
+"70%"
+t.setAttribute("width","30%")
+undefined
+t.removeAttribute("width")
+undefined
+t.style.color="red"
+"red"
+t.style.fontSize="30px"
+"30px"
+

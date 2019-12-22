@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+     <title>秒表</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+       #clock {
+          border: 1px solid #ccc;
+          width: 100px;
+          height: 50px;
+          font-size: 3em;
+       }
+     </style>
+     <script type="text/javascript">
+        var id;//定时器的ID
+        var index = 1;//默认的毫秒数(单位0.1s)
+        function start1(){         
+           //启动定时器
+           id = setInterval(function(){
+                //每隔100ms执行一次函数，在函数中将秒表屏幕中的时间刷新为最新的数据。
+                var p = document.getElementById("clock");
+                p.innerHTML = index++;
+           }, 100);
+        }
+        function stop1(){
+           clearInterval(id);
+        }
+        function clear1(){
+           //将秒表屏幕中的数据清除
+           var p = document.getElementById("clock");
+           p.innerHTML = "";
+           //将毫秒数复位
+           index = 1;
+        }
+     </script>
+  </head>
+  <body>
+     <!-- 秒表的屏幕 -->
+     <p id="clock"></p>
+     <!-- 秒表的按钮 -->
+     <p>
+       <button onclick="start1();">启动</button>
+       <button onclick="stop1();">暂停</button>
+       <button onclick="clear1();">清零</button>
+     </p>
+  </body>
+</html>
