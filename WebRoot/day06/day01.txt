@@ -1,0 +1,76 @@
+var li = document.getElementById("game_bg")
+undefined
+li.parentNode
+<ol>​<li id=​"game_bg">​…​</li>​<li id=​"game_sys">​…​</li>​</ol>​
+li.childNodes
+NodeList(5) [text, a, text, ul, text]0: textassignedSlot: nullbaseURI: "file:///G:/java2017ci/Workspaces/MyEclipse%202017%20CI/WebBasic/WebRoot/day01/lol.html"childNodes: NodeList []data: "↵		       "firstChild: nullisConnected: truelastChild: nulllength: 10nextElementSibling: anextSibling: anodeName: "#text"nodeType: 3nodeValue: "↵		       "ownerDocument: documentparentElement: li#game_bgparentNode: li#game_bgpreviousElementSibling: nullpreviousSibling: nulltextContent: "↵		       "wholeText: "↵		       "__proto__: Text1: a2: text3: ul4: textlength: 5__proto__: NodeList
+li.getElementsByTagName("ul")
+HTMLCollection [ul]0: ullength: 1__proto__: HTMLCollection
+li.getElementsByTagName("a")
+HTMLCollection [a]0: alength: 1__proto__: HTMLCollection
+document.getElementsByName("favorites")
+NodeList(3) [input#basketball, input#football, input#pingpang]
+########################################################################
+查询节点办法
+1.document.getElementById(id)根据id查询节点
+2.element.parentNode获取节点的父亲
+  element.childNodes获取节点的所有孩子，包括空格
+  element.getElementsByTagName(元素名)获取节点的孩子，不包括空格
+3.document.getElementsByName(name)根据名称查询节点，得到一组同名的节点，常用在表单中
+创建新节点，没有显示，处于游离状态
+var a = document.createElement(元素名);
+a.属性 = "";
+将新节点插入到某个元素下:
+element.appendChild(a);//将节点a插入到element下，作为其最小的孩子
+element.insertBefore(a, brother);//将节点a插入到element下，作为其最大的孩子
+######################################################################
+var ul = document.getElementById("zj")
+undefined
+var li = document.createElement("li")
+undefined
+li.innerText = "余姚";
+"余姚"
+li
+<li>​余姚​</li>​
+ul.appendChild(li)
+<li>​余姚​</li>​
+var li2 = document.createElement("li")
+undefined
+li2.innerText = "嘉兴"
+"嘉兴"
+li2
+<li>​嘉兴​</li>
+ul.insertBefore(li2, li)
+<li>​嘉兴​</li>​
+var hz = document.getElementById("hz")
+undefined
+ul.insertBefore(li2,hz)
+<li>​嘉兴​</li>
+#########################################
+var li = document.createElement("li");
+undefined
+li.innerText = "绍兴";
+"绍兴"
+var ul = document.getElementById("zj")
+undefined
+ul.appendChild(li)
+<li>​绍兴​</li>​
+var nb = document.getElementById("nb")
+undefined
+ul.insertBefore(li,nb);
+<li>​绍兴​</li>​
+li
+<li>​绍兴​</li>​
+#######################################
+var nb = document.getElementById("nb")
+undefined
+var zj = document.getElementById("zj")
+undefined
+zj.removeChild(nb)
+<li id=​"nb">​宁波​</li>
+----------------------------------------
+var nb = document.getElementById("nb")
+undefined
+nb.parentNode.removeChild(nb)
+<li id=​"nb">​宁波​</li>​​​
+​
