@@ -22,6 +22,7 @@
       }
     </style>
     <script type="text/javascript">
+         //加入购物车
          function add_shoppingcart(btn){
             //1.根据点击的按钮，获取同行的商品名和单价
             //根据点击的按钮，找到它的爷爷tr
@@ -42,12 +43,95 @@
             '<td>'+name+'</td>'+
             '<td>'+price+'</td>'+
             '<td align="center">'+
-               '<input type="button" value="-"/> '+
+               '<input type="button" value="-" onclick="decrease(this);"/> '+
                '<input type="text" size="3" readonly value="1"/> '+
-               '<input type="button" value="+"/>'+
+               '<input type="button" value="+" onclick="increase(this);"/>'+
             '</td>'+
             '<td>'+price+'</td>'+
-            '<td align="center"><input type="button" value="x"/></td>';
+            '<td align="center"><input type="button" value="x" onclick="del(this);"/></td>';
+            //计算总计
+            total();
+         }
+         //将商品从购物车中删除
+         //<input type="button" value="x" onclick="del(this);"/>
+         //this就是button按钮，由于删除按钮上单击事件中调用了该方法，并传入了this参数，
+         //this是你正在点击的按钮对象，所以btn参数接收的就是this的值。
+         function del(btn){
+            //获取当前点击的删除按钮所在的行tr
+            var tr = btn.parentNode.parentNode;
+            //删除这一行
+            tr.parentNode.removeChild(tr);
+            //计算总计
+            total();
+         }
+         //增加
+         function increase(btn){
+            //1.将数量+1
+            //获取当前行的数量
+            var td = btn.parentNode;
+            var inputs = td.getElementsByTagName("input");
+            var text = inputs[1];
+            var amount = parseInt(text.value);
+            text.value = ++amount;
+            //alert(text.value);
+            //2.计算金额=单价*数量
+            //获取单价
+            var tr = btn.parentNode.parentNode;
+            var tds = tr.getElementsByTagName("td");
+            var price = parseFloat(tds[1].innerText);
+            //计算金额
+            var mny = amount*price;
+            //获取金额td
+            tds[3].innerText = mny;
+            //计算总计
+            total();
+         }
+         //减少
+         function decrease(btn){
+            //1.将数量-1
+            //获取当前行的数量
+            var td = btn.parentNode;
+            var inputs = td.getElementsByTagName("input");
+            var text = inputs[1];
+            var amount = parseInt(text.value);
+            //判断数量是否等于1，等于时不能再减少了
+            if(amount == 1){
+               return;
+            }  
+            text.value = --amount;
+            //alert(text.value);
+            //2.计算金额=单价*数量
+            //获取单价
+            var tr = btn.parentNode.parentNode;
+            var tds = tr.getElementsByTagName("td");
+            var price = parseFloat(tds[1].innerText);
+            //计算金额
+            var mny = amount*price;
+            //获取金额td
+            tds[3].innerText = mny;
+            //计算总计
+            total();
+         }
+         //计算总计
+         function total(){
+           //1.获取购物车中所有的商品行
+           var tbody = document.getElementById("goods");
+           var trs = tbody.getElementsByTagName("tr");
+           //2.遍历这些行，获取每一行的金额
+           var sum = 0; 
+           for(var i=0;i<trs.length;i++){
+               //当前行
+               var tr = trs[i];
+               //取当前行的金额列，即第4列
+               var tds = tr.getElementsByTagName("td");
+               var mny = parseFloat(tds[3].innerText);
+               //3.将每一行的金额累加
+               sum += mny;
+               //alert(sum);
+           }          
+           //4.将合计值写入到合计行中
+           var ttd = document.getElementById("total");
+           ttd.innerText = sum;
          }
     </script>
   </head>
