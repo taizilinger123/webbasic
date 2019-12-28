@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+     <title>创建自定义对象</title>
+     <meta charset="utf-8"/>
+     <style type="text/css">
+     </style>
+     <script type="text/javascript">
+        //使用第1种方式创建对象
+        function f1(){
+           //创建对象
+           var teacher = new Object();
+           teacher.name = "苍老师";
+           teacher.age = 40;
+           teacher.work = function(){
+               alert("我教Java。");
+           };
+           //使用对象
+           alert(teacher.name + "," + teacher.age);
+           teacher.work();
+        }
+        //使用第2种方式创建对象
+        function f2(){
+           //创建对象
+           var s = new Student("张三",22);
+           //使用对象
+           alert(s.name + "," + s.age);
+           s.work();
+        }
+        //预置一个带有格式要求的对象
+        function Student(name, age){
+           this.name = name;
+           this.age = age;
+           this.work = function(){
+             alert("我学Java。");
+           }
+        }
+        //使用第3种方式创建对象
+        function f3(){
+           //创建对象
+           var programmer = {
+               "name":"李四",
+               "age":25,
+               "work":function(){alert("我写Java。 ")}
+           }; 
+           //使用对象
+           alert(programmer.name + "," + programmer.age);
+           programmer.work();
+        }
+     </script>
+  </head>
+  <body>
+     <button onclick="f1();">按钮1</button>
+     <button onclick="f2();">按钮2</button>
+     <button onclick="f3();">按钮3</button>
+  </body>
+</html>

@@ -51,6 +51,7 @@
             '<td align="center"><input type="button" value="x" onclick="del(this);"/></td>';
             //计算总计
             total();
+            repeatshop(btn);
          }
          //将商品从购物车中删除
          //<input type="button" value="x" onclick="del(this);"/>
@@ -132,6 +133,28 @@
            //4.将合计值写入到合计行中
            var ttd = document.getElementById("total");
            ttd.innerText = sum;
+         }
+         //去掉重复的商品名
+         function repeatshop(btn){
+            //1.获取要添加的商品名name
+            var tr = btn.parentNode.parentNode;
+            //找出爷爷tr的所有td的孩子
+            var tds = tr.getElementsByTagName("td");
+            //第1个td的内容是商品名
+            var name = tds[0].innerText;
+            //2.获取购物车中的每一行
+            var tbody = document.getElementById("goods");
+            var trs = tbody.getElementsByTagName("tr");
+            //3.遍历这些行，获取每一行的商品名
+            for(var i=0;i<trs.length;i++){
+                var tds = trs[i].getElementsByTagName("td");
+                if(tds[0].innerText==name){
+                    var inputs = tds[2].getElementsByTagName("input");                 
+                    inputs[1].innerText = inputs[1].innerText+1;
+                    //alert(parseInt(inputs[1].value));
+                    return;
+                }
+            }
          }
     </script>
   </head>
